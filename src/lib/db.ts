@@ -10,7 +10,9 @@ export interface User {
   lockedUntil?: string | null;
 }
 
-const dataFilePath = path.join(process.cwd(), 'data', 'users.json');
+const dataFilePath = process.env.VERCEL
+  ? path.join('/tmp', 'users.json')
+  : path.join(process.cwd(), 'data', 'users.json');
 
 export const getUsers = (): User[] => {
   if (!fs.existsSync(dataFilePath)) {
