@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent, Variants } from "framer-motion";
 import { useState } from "react";
 import { Shield } from "lucide-react";
 
@@ -17,7 +17,7 @@ export default function Navbar() {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 } as any}
       className={`fixed top-0 inset-x-0 z-50 flex items-center justify-center p-4 transition-all duration-300`}
     >
       <div 

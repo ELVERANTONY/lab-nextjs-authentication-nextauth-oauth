@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { User, Mail, Shield, Key, Clock, Trash2 } from "lucide-react";
 
 export default function ProfileClient({ user }: { user: any }) {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
@@ -13,7 +13,7 @@ export default function ProfileClient({ user }: { user: any }) {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };

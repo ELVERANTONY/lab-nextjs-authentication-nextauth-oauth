@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Mail, Lock, ArrowRight } from "lucide-react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
@@ -34,7 +34,7 @@ export default function SignIn() {
     }
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
@@ -43,7 +43,7 @@ export default function SignIn() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
   };
